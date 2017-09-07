@@ -1,0 +1,16 @@
+#factorial
+
+def factorial(n):
+    while True:
+
+        if n>=1:
+            return n*(factorial(n-1))
+
+        else:
+            return 1
+
+        if n<=(-1):
+            break
+
+n= int(input("n="))
+print(n, factorial(n))
