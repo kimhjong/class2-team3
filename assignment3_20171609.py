@@ -12,6 +12,9 @@ def readScoreDB():
 	scdb = []
 	try:
 		scdb =  pickle.load(fH)
+		for p in scdb:
+			p['Score'] = int (p['Score'])
+			p['Age'] = int (p['Age'])
 	except:
 		print("Empty DB: ", dbfilename)
 	else:
@@ -54,13 +57,15 @@ def doScoreDB(scdb):
 					if p['Name'] == parse[1]:
 						print(p)
 			except: continue
-			#find 잘못 입력시 프로그램 꺼지는거 수정
+			#find	 잘못 입력시 프로그램 꺼지는거 수정
 		#find 생성
 		elif parse[0] == 'del':
 			try:
 				for p in scdb:
 					if p['Name'] == parse[1]:
 						scdb.remove(p)
+						if p['Name'] == parse[1]:
+							scdb.remove(p)
 			except: continue
 			#del 잘못 입력시 프로그램 꺼지는거 수정
 		#del 오류 수정 	
