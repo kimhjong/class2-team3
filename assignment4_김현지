@@ -1,0 +1,24 @@
+r = int(input("rCp에서 r: "))
+p = int(input("rCp에서 p: "))
+
+def factorial(r):
+    if r == 0:
+        return 1
+    else :
+        fact = 1
+        for i in range(1,r+1):
+            fact = fact*i
+        return fact
+
+
+def com(r,p):
+    return factorial(r)/(factorial(p)*factorial(r-p))
+
+while r!= 0:
+    if r>p :
+        print(com(r,p))
+    elif r<p :
+        print("p는 r값보다 클 수 없다")
+
+    r = int(input("rCp에서 r: "))
+    p = int(input("rCp에서 p: "))
