@@ -21,10 +21,8 @@ try:
             print("0이상 인 수를 입력해주세요")
         elif n == 0 and m > 0:
             print(0)
-        elif n == 0 and m == 0:
+        elif n >= 0 and m == 0:
             print(1)
-        elif n > 0 and m == 0:
-            print("다시 입력해 주세요")
         elif n < m:
             print("n을 m보다 크거나 같게 입력해주세요")
         else:
