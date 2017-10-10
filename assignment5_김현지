@@ -1,0 +1,28 @@
+import time
+import random
+
+def fibo(n):
+	if n <= 1:
+		return n
+	return fibo(n - 1) + fibo(n - 2)
+def interfibo(n):
+    x = 1
+    y = 1
+    for i in range(n-1):
+        x , y=y , x+y
+    return x
+
+
+
+while True:
+	nbr = int(input("Enter a number: "))
+	if nbr == -1:
+		break
+    ts = time.time()
+    fibonumber = interfibo(nbr)
+    ts = time.time() - ts
+    print("InterFibo(%d)=%d, time %.6f" %(nbr, fibonumber, ts))
+	ts = time.time()
+	fibonumber = fibo(nbr)
+	ts = time.time() - ts
+	print("Fibo(%d)=%d, time %.6f" %(nbr, fibonumber, ts))
